@@ -88,7 +88,7 @@ if NUM_ADV_EPOCHS > 0:
     logger.log('Standard Accuracy-\tTest: {:2f}%.'.format(trainer.eval(test_dataloader)*100))
     
     old_score = [0.0, 0.0]
-    logger.log('RST + HAT Adversarial training for {} epochs'.format(NUM_ADV_EPOCHS))
+    logger.log('RST Adversarial training for {} epochs'.format(NUM_ADV_EPOCHS))
     trainer.init_optimizer(args.num_adv_epochs)
     test_adv_acc = 0.0    
     

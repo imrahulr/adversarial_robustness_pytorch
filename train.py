@@ -68,7 +68,7 @@ del train_dataset, test_dataset
 
 
 
-# Adversarial Training (AT, TRADES, MART and HAT)
+# Adversarial Training (AT, TRADES and MART)
 
 seed(args.seed)
 trainer = Trainer(info, args)
