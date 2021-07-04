@@ -35,15 +35,15 @@ args = parse.parse_args()
 assert args.data in SEMISUP_DATASETS, f'Only data in {SEMISUP_DATASETS} is supported!'
 
 
-DATA_DIR = args.data_dir + args.data + '/'
-LOG_DIR = args.log_dir + args.desc
-WEIGHTS = LOG_DIR + '/weights-best.pt'
+DATA_DIR = os.path.join(args.data_dir, args.data)
+LOG_DIR = os.path.join(args.log_dir, args.desc)
+WEIGHTS = os.path.join(LOG_DIR, 'weights-best.pt')
 if os.path.exists(LOG_DIR):
     shutil.rmtree(LOG_DIR)
 os.makedirs(LOG_DIR)
-logger = Logger(LOG_DIR+'/log-train.log')
+logger = Logger(os.path.join(LOG_DIR, 'log-train.log'))
 
-with open(LOG_DIR+'/args.txt', 'w') as f:
+with open(os.path.join(LOG_DIR, 'args.txt'), 'w') as f:
     json.dump(args.__dict__, f, indent=4)
 
 
@@ -125,11 +125,11 @@ for epoch in range(1, NUM_ADV_EPOCHS+1):
     if eval_adv_acc >= old_score[1]:
         old_score[0], old_score[1] = test_acc, eval_adv_acc
         trainer.save_model(WEIGHTS)
-    trainer.save_model(LOG_DIR+'/weights-last.pt')
+    trainer.save_model(os.path.join(LOG_DIR, 'weights-last.pt'))
     
     logger.log('Time taken: {}'.format(format_time(time.time()-start)))
     metrics = metrics.append(pd.DataFrame(epoch_metrics, index=[0]), ignore_index=True)
-    metrics.to_csv(LOG_DIR+'/stats_adv.csv', index=False)
+    metrics.to_csv(os.path.join(LOG_DIR, 'stats_adv.csv'), index=False)
 
     
     

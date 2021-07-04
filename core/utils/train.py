@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm as tqdm
 
-import re
+import os
 import json
 import torch
 import torch.nn as nn
@@ -43,7 +43,7 @@ class Trainer(object):
         self.init_optimizer(self.params.num_adv_epochs)
         
         if self.params.pretrained_file is not None:
-            self.load_model(self.params.log_dir+self.params.pretrained_file+'/weights-best.pt')
+            self.load_model(os.path.join(self.params.log_dir, self.params.pretrained_file, 'weights-best.pt'))
         
         self.attack, self.eval_attack = self.init_attack(self.model, self.criterion, self.params.attack, self.params.attack_eps, 
                                                          self.params.attack_iter, self.params.attack_step)

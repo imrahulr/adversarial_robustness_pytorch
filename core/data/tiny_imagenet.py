@@ -1,3 +1,4 @@
+import os
 import torch
 
 import torchvision
@@ -30,7 +31,7 @@ def load_tinyimagenet(data_dir, use_augmentation=False):
     else: 
         train_transform = test_transform
     
-    train_dataset = ImageFolder(data_dir+'train', transform=train_transform)
-    test_dataset = ImageFolder(data_dir+'val', transform=test_transform)
+    train_dataset = ImageFolder(os.path.join(data_dir, 'train'), transform=train_transform)
+    test_dataset = ImageFolder(os.path.join(data_dir, 'val'), transform=test_transform)
 
     return train_dataset, test_dataset

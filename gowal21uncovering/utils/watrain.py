@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm as tqdm
 
-import re
 import copy
 import json
 import torch
