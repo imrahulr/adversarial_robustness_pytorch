@@ -29,7 +29,7 @@ $ python train-wa.py --data-dir <data_dir> \
     --aux-data-filename <path_to_additional_data>
 ```
 
-**Note**: Expect a 0.5-0.9% lower robust accuracy than that reported in the paper since the original implementation uses a custom regenerated pseudolabeled data which is not publicly available (See Section 4.3.1 [here](https://arxiv.org/abs/2010.03593)).
+**Note**: Expect a 0.5-0.9% lower robust accuracy than that reported in the paper since the original implementation uses a custom regenerated pseudolabeled dataset which is not publicly available (See Section 4.3.1 [here](https://arxiv.org/abs/2010.03593)).
 
 ### Robustness Evaluation
 
@@ -48,6 +48,27 @@ $ python eval-adv.py --wb --data-dir <data_dir> \
     --desc <name_of_the_experiment>
 ```
 
-## Reference
+## Reference & Citing this work
 
-[1]  Uncovering the Limits of Adversarial Training against Norm-Bounded Adversarial Examples, Gowal et al., 2020. [[Paper](https://arxiv.org/abs/2010.03593)] [[Code in JAX+Haiku](https://github.com/deepmind/deepmind-research/tree/master/adversarial_robustness)] [[Pretrained models](https://github.com/deepmind/deepmind-research/tree/master/adversarial_robustness)]
+If you use this code in your research, please cite the original work [[Paper](https://arxiv.org/abs/2010.03593)] [[Code in JAX+Haiku](https://github.com/deepmind/deepmind-research/tree/master/adversarial_robustness)] [[Pretrained models](https://github.com/deepmind/deepmind-research/tree/master/adversarial_robustness)]:
+
+```
+@article{gowal2020uncovering,
+    title={Uncovering the Limits of Adversarial Training against Norm-Bounded Adversarial Examples},
+    author={Gowal, Sven and Qin, Chongli and Uesato, Jonathan and Mann, Timothy and Kohli, Pushmeet},
+    journal={arXiv preprint arXiv:2010.03593},
+    year={2020},
+    url={https://arxiv.org/pdf/2010.03593}
+}
+```
+
+*and* this repository:
+
+```
+@misc{rade2021pytorch,
+    title = {{PyTorch} Implementation of Uncovering the Limits of Adversarial Training against Norm-Bounded Adversarial Examples},
+    author = {Rade, Rahul},
+    year = {2021},
+    url = {https://github.com/imrahulr/adversarial_robustness_pytorch}
+}
+```

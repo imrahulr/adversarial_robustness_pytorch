@@ -6,9 +6,6 @@ import torchvision.transforms as transforms
 import re
 import numpy as np
 
-from .cifar10 import DATA_DESC
-DATA_DESC['data'] = 'cifar10s'
-
 from .semisup import SemiSupervisedDataset
 from .semisup import SemiSupervisedSampler
 

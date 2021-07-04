@@ -28,10 +28,9 @@ def get_data_info(data_dir):
     Arguments:
         data_dir (str): path to data directory.
     """
+    dataset = os.path.basename(os.path.normpath(data_dir))
     if 'cifar100' in data_dir:
         from .cifar100 import DATA_DESC
-    elif 'cifar10s' in data_dir:
-        from .cifar10s import DATA_DESC
     elif 'cifar10' in data_dir:
         from .cifar10 import DATA_DESC
     elif 'svhn' in data_dir:
@@ -40,6 +39,7 @@ def get_data_info(data_dir):
         from .tiny_imagenet import DATA_DESC
     else:
         raise ValueError(f'Only data in {DATASETS} are supported!')
+    DATA_DESC['data'] = dataset
     return DATA_DESC
 
 
