@@ -29,7 +29,7 @@ $ python train-wa.py --data-dir <data_dir> \
     --aux-data-filename <path_to_additional_data>
 ```
 
-**Note**: Note that with [Gowal et al., 2020](https://arxiv.org/abs/2010.03593) expect about 0.5% lower robust accuracy than that reported in the paper since the original implementation uses a custom regenerated pseudolabeled dataset which is not publicly available (See Section 4.3.1 [here](https://arxiv.org/abs/2010.03593)).
+**Note**: Note that with [Gowal et al., 2020](https://arxiv.org/abs/2010.03593), expect about 0.5% lower robust accuracy than that reported in the paper since the original implementation uses a custom regenerated pseudolabeled dataset which is not publicly available (See Section 4.3.1 [here](https://arxiv.org/abs/2010.03593)).
 
 ### Robustness Evaluation
 
