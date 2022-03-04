@@ -1,10 +1,10 @@
-autoattack==0.1
+git+https://github.com/RobustBench/robustbench.git@v0.1#egg=robustbench
+git+https://github.com/fra31/auto-attack.git@a20387953d37ea776c15ee3a96ac32a168999809#egg=autoattack
 matplotlib==3.4.2
 numpy==1.19.5
-pandas==1.2.4
+pandas~=1.1.0
 Pillow==8.2.0
-robustbench==0.1
 scipy==1.4.1
 torch==1.8.0+cu101
 torchvision==0.9.0+cu101
-tqdm==4.60.0
+tqdm~=4.56.1
